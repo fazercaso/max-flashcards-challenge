@@ -6,6 +6,7 @@ const React = require('react');
 const express = require ('express');
 const logger = require('morgan');
 const path = require('path');
+const Home = require('./view/Home');
 
 
 const app = express();
