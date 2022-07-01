@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Questions', [{
@@ -14,7 +12,7 @@ module.exports = {
       updatedAt: new Date(),
     }, {
       theme_id: 1,// js для умных
-      question: 'Что выведется в консоль "9" +- "3"?',
+      question: 'Что выведется в консоль 9 +- 3?',
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
