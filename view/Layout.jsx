@@ -8,8 +8,8 @@ module.exports = function Layout({ children }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Flashcards</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="/js/client.js" defer />
+        <link rel="stylesheet" href="/styles.css" />
+        <script src='/js/client.js' defer></script>
       </head>
       <body>
         <header className="header">
