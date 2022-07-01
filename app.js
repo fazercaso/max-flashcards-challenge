@@ -17,6 +17,7 @@ const {
   Answer
 } = require('./db/models');
 const Cards = require('./view/Cards');
+const { url } = require('inspector');
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -45,7 +46,6 @@ app.get(`/js/:id`, async (req, res) => {
       id: req.params.id,
     }
   });
-
   const topic = await Theme.findByPk(1);
   const topicName = topic.desc;
   const questText = quest.question;
@@ -57,22 +57,82 @@ app.get(`/js/:id`, async (req, res) => {
   const html = ReactDOMServer.renderToStaticMarkup(card);
   res.write('<!DOCTYPE html>');
   res.end(html);
-
 });
 
-app.post(`/js/:id`, async (req, res) => {
-  const answerUsers = req.body.answer
-  console.log(req.body.answer)
-  console.log(req.params)
-  const {
-    answer
-  } = req.body;+ 'BODY'
-  console.log(answer);
-  const ans = await Answer.findOne({
+app.get(`/serial/:id`, async (req, res) => {
+  // console.log({req.params})
+  const quest = await Question.findOne({
     where: {
-      question_id: 1
+      theme_id: 2,
+      id: req.params.id,
     }
+  });
+  const topic = await Theme.findByPk(2);
+  const topicName = topic.desc;
+  const questText = quest.question;
+
+  const card = React.createElement(Cards, {
+    topicName,
+    questText
   })
+  const html = ReactDOMServer.renderToStaticMarkup(card);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
+});
+
+app.get(`/blat/:id`, async (req, res) => {
+  // console.log({req.params})
+  const quest = await Question.findOne({
+    where: {
+      theme_id: 3,
+      id: req.params.id,
+    }
+  });
+  const topic = await Theme.findByPk(3);
+  const topicName = topic.desc;
+  const questText = quest.question;
+
+  const card = React.createElement(Cards, {
+    topicName,
+    questText
+  })
+  const html = ReactDOMServer.renderToStaticMarkup(card);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
+});
+
+app.get(`/elbrus/:id`, async (req, res) => {
+  // console.log({req.params})
+  const quest = await Question.findOne({
+    where: {
+      theme_id: 4,
+      id: req.params.id,
+    }
+  });
+  const topic = await Theme.findByPk(4);
+  const topicName = topic.desc;
+  const questText = quest.question;
+
+  const card = React.createElement(Cards, {
+    topicName,
+    questText
+  })
+  const html = ReactDOMServer.renderToStaticMarkup(card);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
+});
+
+app.post(`/js/:id`, async (req, res) => { 
+  const answerUsers = req.body.answer; 
+  // const {
+  //   answer
+  // } = req.body;+ 'BODY'
+
+  // const ans = await Answer.findOne({
+  //   where: {
+  //     question_id: req.params.id
+  //   }
+  // })
   // console.log(ans);
   // if (answer === ans) {
   //   return res.send('Верный ответ!')

@@ -19,7 +19,7 @@ module.exports = function Layout({ children }) {
               <ul className="header__lists">
                 <li className="header__lists-item"><a className="header__lists-links">Register</a></li>
                 <li className="header__lists-item"><a className="header__lists-links">Login</a></li>
-                <li className="header__lists-item"><a className="header__lists-links">Home</a></li>
+                <li className="header__lists-item"><a className="header__lists-links" href='/'>Home</a></li>
               </ul>
             </div>
           </div>

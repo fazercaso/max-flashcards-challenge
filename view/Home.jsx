@@ -10,9 +10,9 @@ module.exports = function Home() {
         <div className="content__topics">
           <ul className="content__list">
             <li className="content__item"><a className="content__item-link" id="1" href="/js/1">JavaScript для умных</a></li>
-            <li className="content__item"><a className="content__item-link" id="2" href="/serial">Сериалы</a></li>
-            <li className="content__item"><a className="content__item-link" id="3" href="/blat">Блатная</a></li>
-            <li className="content__item"><a className="content__item-link" id="4" href="/elbrus">Elbrus</a></li>
+            <li className="content__item"><a className="content__item-link" id="2" href="/serial/4">Сериалы</a></li>
+            <li className="content__item"><a className="content__item-link" id="3" href="/blat/7">Блатная</a></li>
+            <li className="content__item"><a className="content__item-link" id="4" href="/elbrus/10">Elbrus</a></li>
           </ul>
         </div>
       </div>
