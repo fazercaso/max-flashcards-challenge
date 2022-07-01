@@ -1,0 +1,121 @@
+@font-face {
+   font-style: normal;
+   font-weight: 400;
+   font-family: "PFAngora";
+   font-display: swap;
+   src: url("./fonts/PFAgoraSansPro-Regular.woff2") format("woff");
+}
+@font-face {
+   font-style: normal;
+   font-weight: 700;
+   font-family: "PFAngora";
+   font-display: swap;
+   src: url("./fonts/PFAgoraSansPro-Medium.woff2") format("woff");
+}
+
+body {
+	font-size: 18px;
+	line-height: 30px;
+	font-family: "PFAngora", "Arial", sans-serif;
+	color: #000000;
+	background-color: #ffffff;
+   height: 100%;
+   margin: 0;
+}
+
+.container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding-left: 20px;
+   padding-right: 20px;
+   align-items: center;
+   background-color:mediumpurple;
+   color: #ffffff;
+}
+
+.header__lists {
+   padding: 0;
+   list-style-type: none;
+   display: flex;
+   gap: 13px;
+}
+
+.header__lists-links {
+   text-decoration: none;
+   color: #ffffff;
+}
+
+.header__lists-links:hover {
+   opacity: 0.7;
+}
+
+.content {
+   margin-top: 20px;
+   margin-left: 20px;
+   margin-right: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.content__title {
+   font-size: 47px;
+   margin-bottom: 0;
+}
+
+.content__subtitle {
+   margin-bottom: 10px;
+}
+
+.content__list {
+   padding: 0;
+   list-style-type: none;
+   display: flex;
+   gap: 13px;
+   flex-direction: column;
+   align-items: center;
+}
+
+.content__item-link {
+   text-decoration: none;
+   color:#000000;
+}
+
+.content__item-link:hover {
+   opacity: 0.7;
+}
+
+.content__gamecard {
+   margin-top: 50px;
+}
+
+#content__card-form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+#content__card-input {
+   width: 330px;
+   padding: 10px;
+   border-radius: 15px;
+}
+
+#content_card-button {
+   cursor: pointer;
+   text-transform: uppercase;
+   background-color: slateblue;
+   font-weight: 700;
+   border: transparent;
+   width: 200px;
+   align-self: center;
+   color: white;
+   padding: 15px;
+   border-radius: 15px;
+   margin-top: 20px;
+}
+
+#content_card-button:hover {
+   background-color:darkslateblue;
+}
