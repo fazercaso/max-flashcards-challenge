@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       desc: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -21,7 +22,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Themes');
   }
 };
