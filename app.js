@@ -1,4 +1,6 @@
 require('@babel/register');
+const ReactDOMServer = require('react-dom/server');
+const React = require('react');
 
 
 const express = require ('express');
@@ -9,16 +11,30 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT ?? 3000; 
 
-
+//middlewares morgan + express
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+//routes
 app.get('/', (req,res) => {
-  res.send('мама я попал на тиви')
-})
+  res.send('мама я попал на тиви');
+});
+
+
+app.get('/cards', (req,res) => {
+  const main = React.createElement(Home, { title: 'Express' });
+  const html = ReactDOMServer.renderToStaticMarkup(main);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
+});
+
+
+
+
+
+
 
 
 app.listen(PORT, () => {
