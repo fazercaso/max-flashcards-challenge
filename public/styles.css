@@ -74,6 +74,7 @@ body {
    display: flex;
    gap: 13px;
    flex-direction: column;
+   align-items: center;
 }
 
 .content__item-link {

@@ -8,7 +8,8 @@ module.exports = function Layout({ children }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Flashcards</title>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="/styles.css" />
+        <script src='/js/client.js' defer></script>
       </head>
       <body>
         <header className="header">
@@ -18,7 +19,7 @@ module.exports = function Layout({ children }) {
               <ul className="header__lists">
                 <li className="header__lists-item"><a className="header__lists-links">Register</a></li>
                 <li className="header__lists-item"><a className="header__lists-links">Login</a></li>
-                <li className="header__lists-item"><a className="header__lists-links">Home</a></li>
+                <li className="header__lists-item"><a className="header__lists-links" href='/'>Home</a></li>
               </ul>
             </div>
           </div>

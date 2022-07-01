@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Theme extends Model {
     
-    static associate() {
+    static associate({ Question }) {
       // define association here
       Theme.hasMany(Question, {foreignKey: 'id'})
     }
