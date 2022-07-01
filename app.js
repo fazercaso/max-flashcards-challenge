@@ -19,16 +19,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 app.get('/', (req,res) => {
-  res.send('мама я попал на тиви');
-});
-
-
-app.get('/cards', (req,res) => {
   const main = React.createElement(Home, { title: 'Express' });
   const html = ReactDOMServer.renderToStaticMarkup(main);
   res.write('<!DOCTYPE html>');
   res.end(html);
 });
+
+
+// app.get('/cards', (req,res) => {
+//   const main = React.createElement(Home, { title: 'Express' });
+//   const html = ReactDOMServer.renderToStaticMarkup(main);
+//   res.write('<!DOCTYPE html>');
+//   res.end(html);
+// });
 
 
 
