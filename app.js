@@ -2,30 +2,35 @@ require('@babel/register');
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
-
-const express = require ('express');
+const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const Home = require('./view/Home');
 
+const { Question } = require('./db/models');
+const Cards = require('./view/Cards');
 
 const app = express();
-const PORT = process.env.PORT ?? 3000; 
+const PORT = process.env.PORT ?? 3000;
 
-//middlewares morgan + express
+// middlewares morgan + express
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//routes
-app.get('/', (req,res) => {
-  const main = React.createElement(Home, { title: 'Express' });
+// routes
+app.get('/', (req, res) => {
+  const main = React.createElement(Home);
   const html = ReactDOMServer.renderToStaticMarkup(main);
   res.write('<!DOCTYPE html>');
   res.end(html);
 });
 
+app.get('/js', async (req, res) => {
+  const quest = await Question.findAll({});
+  console.log(quest);
+});
 
 // app.get('/cards', (req,res) => {
 //   const main = React.createElement(Home, { title: 'Express' });
@@ -34,12 +39,6 @@ app.get('/', (req,res) => {
 //   res.end(html);
 // });
 
-
-
-
-
-
-
-
 app.listen(PORT, () => {
-  console.log(`Server started on ${PORT}, my Lord`)});
+  console.log(`Server started on ${PORT}, my Lord`);
+});
