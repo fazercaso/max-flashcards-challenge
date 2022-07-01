@@ -1,4 +1,13 @@
-// document.querySelectorAll('.content__item-link').forEach((btn) => btn.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   console.log('все ок');
-// }));
+document.form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const answer = event.target.input.value;
+  
+  const res = await fetch(`/js/:id`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({ answer }),
+  })
+  
+})
