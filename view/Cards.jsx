@@ -11,8 +11,8 @@ module.exports = function Cards({ topicName, questText}) {
             {questText}
           </p>
           <form action="#" id="content__card-form" name="form">
-            <span className="content__question-sub">Enter your guess here:</span>
-            <input type="text" id="content__card-input" name="input" placeholder="Write here" />
+            <span className="content__question-sub">Ответ ждем сюда:</span>
+            <input type="text" id="content__card-input" name="input" placeholder="Пиши сюда" />
             <input type="submit" id="content_card-button" value="Let`s check!" />
           </form>
         </div>
